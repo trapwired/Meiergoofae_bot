@@ -3,9 +3,4 @@
 
 *.pickle
 
-bot_api_key.ini
-
-
-
-
 src/api.ini
