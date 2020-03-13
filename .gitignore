@@ -3,7 +3,8 @@
 
 *.pickle
 
-bot_api_key
+bot_api_key.py
+
 
 
 
