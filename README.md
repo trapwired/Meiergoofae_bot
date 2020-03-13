@@ -9,7 +9,7 @@ a simple Telegram bot for my flat
 - build / plan structure of code --> VALDO
 - create clean main file --> VALE
 - catch just randomly sent messages to group (what happens in else clause)
-- on start of pie: automatically start bot
+- on startup, start bot
 - create /help 
 
 
