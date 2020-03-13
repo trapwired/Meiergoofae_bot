@@ -17,6 +17,7 @@ a simple Telegram bot for my flat
 - create /help 
 - start commands with /
 - inline?
+- other fancy features
 
 
 
