@@ -9,6 +9,7 @@ a simple Telegram bot for my flat
 - create clean main file
 - catch just randomly sent messages to group (what happens in else clause)
 - on start of pie: automatically start bot
+- create /help 
 
 
 # features
