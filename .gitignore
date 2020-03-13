@@ -1,2 +1,10 @@
 # json files
 *.json
+
+*.pickle
+
+bot_api_key
+
+
+
+

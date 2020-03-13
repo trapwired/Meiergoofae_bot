@@ -4,6 +4,8 @@ import random
 import datetime
 import json
 import telepot
+import quickstart as qs
+import bot_api_key as api_key
 
 chat_id_dict = {}
 name_to_wait = -1
@@ -33,7 +35,7 @@ def handle(msg):
 	command = msg['text']
 	command = command.lower()
 	
-	print 'Got command: %s (%s)' % (command, chat_id)
+	print('Got command: %s (%s)' % (command, chat_id))
 
 	if command == '/start':
 		if not id_stored(chat_id, chat_id_dict):
@@ -44,7 +46,7 @@ def handle(msg):
 	
 	elif command == 'hello':
 		bot.sendMessage(chat_id, 'hello back')
-	elif command == 'time':
+	elif command == 'time': 
 		bot.sendMessage(chat_id, str(datetime.datetime.now()))
 	elif command == 'dict':
 		bot.sendMessage(chat_id, getDict(chat_id_dict))
@@ -53,6 +55,9 @@ def handle(msg):
 		print(zahl)
 		for i in range(1,zahl):
 			bot.sendMessage(chat_id, 'Hello Domi')
+			time.sleep(1)
+	elif command == 'events':
+		bot.sendMessage(chat_id, qs.getCalendarEntries())
 	else:
 		if chat_id == name_to_wait:
 			chat_id_dict[command] = chat_id
@@ -61,9 +66,9 @@ def handle(msg):
 		else:
 			bot.sendMessage(chat_id, command)
 
-bot = telepot.Bot('1058220791:AAFQW9Cwaae0iNZkfOvzntvpSh3KzpDoSBw')
+bot = telepot.Bot(api_key.key)
 bot.message_loop(handle)
-print 'I am listening'
+print('I am listening')
 
 while 1:
 	time.sleep(10)
