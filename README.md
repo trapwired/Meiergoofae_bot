@@ -13,7 +13,7 @@ a simple Telegram bot for my flat
     - when doorbell rings, you get message
 
 - save dict of people -> chat_id in file (via /start) --> do we need this?
-- on startup, start bot (https://learn.sparkfun.com/tutorials/how-to-run-a-raspberry-pi-program-on-startup#method-1-rclocal, rc_local)
+- on startup, start bot (https://learn.sparkfun.com/tutorials/how-to-run-a-raspberry-pi-program-on-startup#method-1-rclocal, rc_local) + add exit script (when automatically started, to end bot)
 - create /help 
 - start commands with /
 - inline?
