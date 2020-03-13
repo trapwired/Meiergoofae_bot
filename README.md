@@ -3,14 +3,21 @@ a simple Telegram bot for my flat
 
 # To Do
 - calendar
+    - more reminders (1 day, 3 day) -> python event scheduler (main loop)
+    - create events
 - drinks
+    - generate drink + gif
+    - cocktail tuesday reminders
 - doorbell
+    - activateable for time (ie 60min)
+    - when doorbell rings, you get message
+
 - save dict of people -> chat_id in file (via /start) --> do we need this?
-- build / plan structure of code --> VALDO
-- create clean main file --> VALE
-- catch just randomly sent messages to group (what happens in else clause)
 - on startup, start bot
 - create /help 
+- start commands with /
+- inline?
+
 
 
 # features
