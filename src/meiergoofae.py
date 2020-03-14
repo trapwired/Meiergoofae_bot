@@ -7,6 +7,7 @@ import configparser
 import json
 import telepot
 import quickstart as qs
+from drinks import CocktailHandler
 
 
 class MeiergoofaBot(object):
@@ -18,6 +19,8 @@ class MeiergoofaBot(object):
         self.api_config = api_config
 
         self.bot = telepot.Bot(self.api_config["API"]["key"])
+
+        self.cocktail_handler = CocktailHandler()
 
     def handle(self, msg: dict):
         # Get fields from message
@@ -61,6 +64,9 @@ class MeiergoofaBot(object):
         # Get events
         elif command == 'events':
             self.bot.sendMessage(chat_id, qs.getCalendarEntries())
+
+        elif command == "cocktail":
+            self.cocktail_handler.handle(msg, self.config["Cocktails"])
 
         # Send back same message
         else:
