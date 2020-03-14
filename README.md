@@ -3,15 +3,15 @@ a simple Telegram bot for my flat
 
 # To Do
 ### calendar
-    - [ ] more reminders (1 day, 3 day) -> python event scheduler (main loop)
-    - [ ] create events 
-    - [ ] add events to google calendar
+- [ ] more reminders (1 day, 3 day) -> python event scheduler (main loop)
+- [ ] create events 
+- [ ] add events to google calendar
 ### drinks
-    - [ ] generate drink + gif
-    - [ ] cocktail tuesday reminders
+- [ ] generate drink + gif
+- [ ] cocktail tuesday reminders
 ### doorbell
-    - [ ] activateable for time (ie 60min)
-    - [ ] when doorbell rings, you get message
+- [ ] activateable for time (ie 60min)
+- [ ] when doorbell rings, you get message
 
 - [ ] save dict of people -> chat_id in file (via /start) --> do we need this?
 - [ ] on startup, start bot (https://learn.sparkfun.com/tutorials/how-to-run-a-raspberry-pi-program-on-startup#method-1-rclocal, rc_local) + add exit script (when automatically started, to end bot)
