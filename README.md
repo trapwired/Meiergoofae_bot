@@ -4,7 +4,8 @@ a simple Telegram bot for my flat
 # To Do
 - calendar
     - more reminders (1 day, 3 day) -> python event scheduler (main loop)
-    - create events
+    - create events 
+    - add events to google calendar
 - drinks
     - generate drink + gif
     - cocktail tuesday reminders
@@ -13,7 +14,7 @@ a simple Telegram bot for my flat
     - when doorbell rings, you get message
 
 - save dict of people -> chat_id in file (via /start) --> do we need this?
-- on startup, start bot
+- on startup, start bot (https://learn.sparkfun.com/tutorials/how-to-run-a-raspberry-pi-program-on-startup#method-1-rclocal, rc_local) + add exit script (when automatically started, to end bot)
 - create /help 
 - start commands with /
 - inline?
@@ -33,5 +34,14 @@ a simple Telegram bot for my flat
 ## doorbell
 - get message when doorbell rings
 - possible to activate via short text (+ deactivate)
+
+## Grocery shopping list
+- add things
+- query status
+- delete / alredeady bought
+
+## Laundry machine status
+- query status from laundry machine
+    - how long does it still take
 
 
