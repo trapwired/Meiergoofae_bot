@@ -52,6 +52,10 @@ class MeiergoofaBot(object):
                 if self.name_to_id else "Nobody connected"
             )
 
+        # tell 
+        elif command.startswith('/tell '):
+            self.bot.sendMessage(self.api_config["CHATS"]["group_id"], command[5:])
+            
         # Get events
         elif command == '/events':
             self.bot.sendMessage(chat_id, qs.getCalendarEntries())
