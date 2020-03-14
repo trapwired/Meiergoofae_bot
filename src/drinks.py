@@ -5,14 +5,19 @@ class CocktailHandler(object):
 
     def __init__(self, config, bot : telepot.Bot):
         super().__init__()
-        self.alkohol = config["alkohol"].replace("\n", "").split(",")
-        self.alkoholmengen = list(map(int, config["alkoholmengen"].replace("\n", "").split(",")))
-        self.mische = config["mische"].replace("\n", "").split(",")
-        self.fancies = config["fancies"].replace("\n", "").split(",")
-        self.extras = config["extras"].replace("\n", "").split(",")
-        self.gifs = config["gifs"].replace("\n", "").split(",")
-        self.personen = config["personen"].replace("\n", "").split(",")
+        self.alkohol = self.clean_config(config["alkohol"])
+        self.alkoholmengen = self.clean_config(config["alkoholmengen"])
+        self.mische = self.clean_config(config["mische"])
+        self.fancies = self.clean_config(config["fancies"])
+        self.extras = self.clean_config(config["extras"])
+        self.gifs = self.clean_config(config["gifs"])
+        self.personen = self.clean_config(config["personen"])
         self.bot = bot
+
+    @staticmethod
+    def clean_config(raw_str):
+        raw_list = raw_str.replace("\n", "").split(",")
+        return list(map(lambda x: x.strip(), raw_list))
 
     def handle(self, msg):
         chat_id = msg['chat']['id']
