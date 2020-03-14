@@ -20,7 +20,7 @@ class MeiergoofaBot(object):
 
         self.bot = telepot.Bot(self.api_config["API"]["key"])
 
-        self.cocktail_handler = CocktailHandler(self.config, self.bot)
+        self.cocktail_handler = CocktailHandler(self.config["Cocktails"], self.bot)
 
     def handle(self, msg: dict):
         # Get fields from message
@@ -66,7 +66,7 @@ class MeiergoofaBot(object):
             self.bot.sendMessage(chat_id, qs.getCalendarEntries())
 
         elif command == "cocktail":
-            self.cocktail_handler.handle(msg, self.config["Cocktails"])
+            self.cocktail_handler.handle(msg)
 
         # Send back same message
         else:
