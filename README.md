@@ -4,7 +4,8 @@ a simple Telegram bot for my flat
 # To Do
 - calendar
     - more reminders (1 day, 3 day) -> python event scheduler (main loop)
-    - create events
+    - create events 
+    - add events to google calendar
 - drinks
     - generate drink + gif
     - cocktail tuesday reminders
@@ -33,5 +34,14 @@ a simple Telegram bot for my flat
 ## doorbell
 - get message when doorbell rings
 - possible to activate via short text (+ deactivate)
+
+## Grocery shopping list
+- add things
+- query status
+- delete / alredeady bought
+
+## Laundry machine status
+- query status from laundry machine
+    - how long does it still take
 
 
