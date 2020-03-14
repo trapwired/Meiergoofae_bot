@@ -6,6 +6,7 @@ a simple Telegram bot for my flat
 - [x] more reminders (1 day, 3 day) -> python event scheduler (main loop)
 - [ ] create events 
 - [ ] add events to google calendar
+- [ ] make them messages pretty
 ### drinks
 - [x] generate drink + gif
 - [ ] cocktail tuesday reminders -> polish (now only message)
