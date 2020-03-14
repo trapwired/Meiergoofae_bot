@@ -14,7 +14,7 @@ def getCalendarEntries():
     """Shows basic usage of the Google Calendar API.
     Prints the start and name of the next 10 events on the user's calendar.
     """
-    result = 'Next entries: \n'
+    result = 'Don\'t forget: \n'
     creds = None
     # The file token.pickle stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
@@ -43,12 +43,57 @@ def getCalendarEntries():
                                         maxResults=10, singleEvents=True,
                                         orderBy='startTime').execute()
     events = events_result.get('items', [])
+    # print(events)
+    
 
     if not events:
         result += 'No upcoming events found.'
+    
+    events_today = list()
+    events_tomorrow = list()
+    events_2days = list()
+
     for event in events:
-        start : str = event['start'].get('dateTime', event['start'].get('date'))
-        result += start + ' ' + event['summary'] + '\n'
+        start_str = event['start'].get('dateTime', event['start'].get('date'))
+        whole_day = False
+        if len(start_str) < 11:
+            # event takes whole day
+            format = '%Y-%m-%d'
+            start :datetime.datetime = datetime.datetime.strptime(start_str, format)
+            whole_day = True
+        else:
+            format = '%Y-%m-%dT%H:%M:%S+01:00'
+            start :datetime.datetime = datetime.datetime.strptime(start_str, format)
+        now_time = datetime.datetime.now()
+        difference = start - now_time
+        if start.day == now_time.day:
+            if not whole_day:
+                events_today.append(f"{start.hour}:{str(start.minute).zfill(2)} {event['summary']}")
+        if start.day == now_time.day+1:
+            if whole_day:
+                events_tomorrow.append(f"{event['summary']}")
+            else:    
+                events_tomorrow.append(f"{start.hour}:{str(start.minute).zfill(2)} {event['summary']}")
+        if start.day == now_time.day+2:
+            if whole_day:
+                events_2days.append(f"{event['summary']}")
+            else:    
+                events_2days.append(f"{start.hour}:{str(start.minute).zfill(2)} {event['summary']}")
+        # result += start + ' ' + event['summary'] + '\n'
+    if events_today:
+        result += '--Today--\n'
+        result += '\n\t'.join(events_today)
+        result += '\n'
+    if events_tomorrow:
+        result += '--Tomorrow:--\n'
+        result += '\n\t'.join(events_tomorrow)
+        result += '\n'
+    if events_2days:
+        result += '--Day after Tomorrow:--\n'
+        result += '\n\t'.join(events_2days)
+    # print(result)
+    if not events_today and not events_tomorrow and not events_2days:
+        return ''
     return result
 
 if __name__ == '__main__':

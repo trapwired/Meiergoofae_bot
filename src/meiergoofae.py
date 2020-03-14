@@ -6,9 +6,10 @@ import logging
 import configparser
 import json
 import telepot
+
 import quickstart as qs
 from drinks import CocktailHandler
-
+from scheduler import SchedulerHandler
 
 class MeiergoofaBot(object):
 
@@ -21,6 +22,7 @@ class MeiergoofaBot(object):
         self.bot = telepot.Bot(self.api_config["API"]["key"])
 
         self.cocktail_handler = CocktailHandler(self.config["Cocktails"], self.bot)
+        self.scheduler_handler = SchedulerHandler(self.config["Scheduler"], self.bot)
 
     def handle(self, msg: dict):
         # Get fields from message
@@ -99,6 +101,7 @@ def main():
     bot.start()
 
     while True:
+        bot.scheduler_handler.run_schedule()
         time.sleep(10)
 
 

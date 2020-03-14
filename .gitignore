@@ -5,3 +5,7 @@
 
 src/api.ini
 .vscode
+
+.pyc
+
+__pycache__
