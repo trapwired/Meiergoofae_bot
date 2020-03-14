@@ -20,7 +20,7 @@ class MeiergoofaBot(object):
 
         self.bot = telepot.Bot(self.api_config["API"]["key"])
 
-        self.cocktail_handler = CocktailHandler()
+        self.cocktail_handler = CocktailHandler(self.config, self.bot)
 
     def handle(self, msg: dict):
         # Get fields from message
