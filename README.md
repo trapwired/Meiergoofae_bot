@@ -7,7 +7,7 @@ a simple Telegram bot for my flat
 - [ ] create events 
 - [ ] add events to google calendar
 ### drinks
-- [ ] generate drink + gif
+- [x] generate drink + gif
 - [ ] cocktail tuesday reminders
 ### doorbell
 - [ ] activateable for time (ie 60min)
