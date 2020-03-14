@@ -3,12 +3,12 @@ a simple Telegram bot for my flat
 
 # To Do
 ### calendar
-- [ ] more reminders (1 day, 3 day) -> python event scheduler (main loop)
+- [x] more reminders (1 day, 3 day) -> python event scheduler (main loop)
 - [ ] create events 
 - [ ] add events to google calendar
 ### drinks
 - [x] generate drink + gif
-- [ ] cocktail tuesday reminders
+- [ ] cocktail tuesday reminders -> polish (now only message)
 ### doorbell
 - [ ] activateable for time (ie 60min)
 - [ ] when doorbell rings, you get message

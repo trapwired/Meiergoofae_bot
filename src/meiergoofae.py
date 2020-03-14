@@ -22,7 +22,7 @@ class MeiergoofaBot(object):
         self.bot = telepot.Bot(self.api_config["API"]["key"])
 
         self.cocktail_handler = CocktailHandler(self.config["Cocktails"], self.bot)
-        self.scheduler_handler = SchedulerHandler(self.config["Scheduler"], self.bot)
+        self.scheduler_handler = SchedulerHandler(self.api_config["CHATS"], self.bot)
 
     def handle(self, msg: dict):
         # Get fields from message
@@ -45,33 +45,23 @@ class MeiergoofaBot(object):
         elif command == 'hello':
             self.bot.sendMessage(chat_id, 'hello back')
 
-        # Time
-        elif command == 'time':
-            self.bot.sendMessage(chat_id, str(datetime.datetime.now()))
-
         # Who is connected
-        elif command == 'dict':
+        elif command == '/dict':
             self.bot.sendMessage(chat_id, 
                 f"Everybody that is currently connected: \n" + ", ".join(self.name_to_id.keys()) 
                 if self.name_to_id else "Nobody connected"
             )
 
-        # Send random stuff
-        elif command == 'send':
-            zahl = random.randint(1, 10)
-            for _ in range(1, zahl):
-                self.bot.sendMessage(chat_id, 'Hello Domi')
-                time.sleep(1)
-
         # Get events
-        elif command == 'events':
+        elif command == '/events':
             self.bot.sendMessage(chat_id, qs.getCalendarEntries())
 
-        elif command == "cocktail":
+        elif command == "/cocktail":
             self.cocktail_handler.handle(msg)
 
         # Send back same message
         else:
+            # TODO delete before adding to group
             self.bot.sendMessage(chat_id, f'{command} yourself')
 
     def start(self):
