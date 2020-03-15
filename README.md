@@ -20,7 +20,7 @@ a simple Telegram bot for my flat
 - [ ] inline?
 - [x] tell feature 
 ### other fancy features
-
+- [ ] control lights in hallway? or the girlanden?
 
 
 # features
