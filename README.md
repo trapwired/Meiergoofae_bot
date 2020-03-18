@@ -4,7 +4,7 @@ a simple Telegram bot for my flat
 # To Do
 ### calendar
 - [x] more reminders (1 day, 3 day) -> python event scheduler (main loop)
-- [ ] create events 
+- [ ] create events (https://github.com/nickoala/telepot/issues/74 for markup keyboard)
 - [ ] add events to google calendar
 - [ ] make them messages pretty
 ### drinks
